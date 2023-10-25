@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 </head>
 <body>
-    
+        
+        <button data-open-button="#modal">generate</button>
+
+        
+        <div class="modal" id="modal">
+
+            <div class="emailHeader">
+                <div class="title">
+                    To:
+                </div>
+
+                <button data-close-button class="close">
+                    &times;
+                </button>
+
+            </div>
+            
+            
+            <div class="modal-body">
+                input
+            </div>
+            
+            <button>
+                send
+            </button>
+        </div>
+        
+        <div id="overlay">
+            
+        </div>
+
 </body>
 </html>
