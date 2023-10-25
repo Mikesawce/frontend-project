@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
         
-        <button data-open-button="#modal">generate</button>
+        <button data-open-button="#modal">open modal</button>
 
         
         <div class="modal" id="modal">
@@ -18,8 +18,9 @@
                 <div class="title">
                     To:
                 </div>
+                <form action="recepient"></form>
 
-                <button data-close-button class="close">
+                <button data-close-button class="#modal" class="close">
                     &times;
                 </button>
 
@@ -30,14 +31,14 @@
                 input
             </div>
             
-            <button>
+            <!-- <button>
                 send
-            </button>
+            </button> -->
         </div>
         
-        <div id="overlay">
-            
-        </div>
+        <div id="overlay"></div>
+
+
 
 </body>
 </html>

@@ -1,47 +1,36 @@
-//button for create email
-//button for send email
-//window for email
-//elements for forms and such
-
-function createModal() {
-    const body = document.getElementsByTagName('body')
-    const div = document.createElement('div')
-    div.className = `modal`
-    div.id = `modal`
-
-    body.appendChild(modalHeader)
-    body.appendChild(modalBody)
-}
-
-function modalHeader() {
-    const modalHead = document.createElement('h1')
-    //add title
-    //add btn
-}
-
-function modalBody() {
-    const modalBody = document.createElement('div');
-    modalBody.textContent = `yes`
-}
-
-function modalHeaderTitle() {
-    const div = document.createElement('div')
-    div.textContent = `email`
-}
-
-function modalHeaderExit() {
-    const btn = document.createElement('button')
-
-}
-
 // button functionality
-
-const openButton = document.querySelector('[data-open-button]')
-const closeButton = document.querySelector('[data-close-button]')
+const open = document.querySelectorAll('[data-open-button]')
+const close = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
-
-openButton.forEach(button => {
-    button.addEventListener('click', () => {
-        
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        closeModal(modal)
     })
-});
+})
+
+open.forEach((button) => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.openButton)
+        openModal(modal)
+    })
+})
+
+close.forEach((button) => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
