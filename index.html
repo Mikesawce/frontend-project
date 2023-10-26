@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Email</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js" defer></script>
 </head>
@@ -14,26 +14,31 @@
         
         <div class="modal" id="modal">
 
-            <div class="emailHeader">
-                <div class="title">
-                    To:
+            <form action="sent.html" id="emailForm" method="post">
+                <div class="emailHeader" id="emailHeader">
+                    <div>
+                        <label for="addressInput">To:</label>
+                        <input type="text" id="addressInput" name="addressInput" placeholder="Enter Recipient's Email Address" required>
+                    </div>
+
+                    <div>
+                        <button data-close-button class="#modal" id="close">
+                            &times;
+                        </button>
+                    </div>
                 </div>
-                <form action="recepient"></form>
 
-                <button data-close-button class="#modal" class="close">
-                    &times;
-                </button>
+                <div class="emailBody" id="emailBody">
+                    <div>
+                        <label for="message">Secret Squirrel</label>
+                        <br><br>
+                        <textarea name="message" id="message" placeholder="Message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" value="submit">Send</button>
+                </div>
 
-            </div>
-            
-            
-            <div class="modal-body">
-                input
-            </div>
-            
-            <!-- <button>
-                send
-            </button> -->
+            </form>
         </div>
         
         <div id="overlay"></div>
@@ -42,3 +47,5 @@
 
 </body>
 </html>
+
+
