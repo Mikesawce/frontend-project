@@ -1,13 +1,11 @@
 // button functionality
+
 const open = document.querySelectorAll('[data-open-button]')
 const close = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
-const submit = document.getElementById('submit')
-const testText = document.getElementById('test')
-const testBtn = document.getElementById('testBtn')
 overlay.addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active')
-    modals.forEach(modal => {
+    modals.forEach((modal) => {
         closeModal(modal)
     })
 })
@@ -38,16 +36,31 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-function caeserCipher(message, key) {
+let body = document.getElementById('message').value
+
+function caeserCipher(message) {
     let result = ''
     for (let letter of message) {
         if (letter.toUpperCase(letter)) {
-            let char = String.fromCharCode((letter.charCodeAt(0) + key - 65) % 26 + 65)
+            let char = String.fromCharCode((letter.charCodeAt(0) + 4 - 65) % 26 + 65)
             result += char
         } else {
-            let char = String.fromCharCode((char.charCodeAt(0) + key - 97) % 26 + 97)
+            let char = String.fromCharCode((char.charCodeAt(0) + 4 - 97) % 26 + 97)
             result += char
-        }    
+        }
     }
     return result
+}
+
+
+function emailSend(body) {
+    Email.send({
+        Host: 'smtp.elasticemail.com',
+        Username: 'michael.mote1993@gmail.com',
+        Password: '1948991BB027EC12EDEA43EAF9C63DC8ABB9',
+        To: 'michael.mote1993@gmail.com',
+        From: 'michael.mote1993@gmail.com',
+        Subject: 'THE NUMBERS MASON, WHAT DO THEY MEAN?',
+        Body: body
+    }).then((message) => alert(message))
 }
