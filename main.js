@@ -1,3 +1,5 @@
+
+
 // button functionality
 
 const open = document.querySelectorAll('[data-open-button]')
@@ -37,13 +39,8 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-// encrypt.forEach((button) => {
-//     button.addEventListener('click', () => {
-//         const body = document.getElementById('message').value
-//         caeserCipher(body)
-//     })
-// })
 
+// encryption algorithm
 function caesarCipher(message, shift) {
     let result = '';
     for (let letter of message) {
@@ -58,7 +55,7 @@ function caesarCipher(message, shift) {
     }
     return result;
 }
-
+// send email takes text and passes to encryption algorithm
 function emailSend() {
     let body = document.getElementById('message').value
     let messageBody = caesarCipher(body, 4)
@@ -72,3 +69,5 @@ function emailSend() {
         Body: messageBody
     }).then((message) => alert(message))
 }
+
+

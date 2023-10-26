@@ -9,42 +9,38 @@
     <script src=" https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
-        
-        <button data-open-button="#modal">open modal</button>
 
-        
-        <div class="modal" id="modal">
+    <button data-open-button="#modal" id="modalOpenBtn">shhh...</button>
+    
+    <div class="modal" id="modal">
 
-            <form onsubmit="emailSend(); reset(); return false;" id="emailForm" method="post">
-                <div class="emailHeader" id="emailHeader">
-                    <div>
-                        You must be a Secret Squirrel
-                    </div>
-
-                    <div>
-                        <button data-close-button class="#modal" id="close">
-                            &times;
-                        </button>
-                    </div>
+        <form onsubmit="emailSend(); reset(); return false;" id="emailForm" method="post">
+            <div class="emailHeader" id="emailHeader">
+                <div>
+                    You must be a Secret Squirrel
                 </div>
 
-                <div class="emailBody" id="emailBody">
-                    <div>
-                        <label for="message">Type your message below!</label>
-                        <br><br>
-                        <textarea name="message" id="message" placeholder="Message"></textarea>
-                    </div>
-                
-                    <button type="submit" value="submit" id="submit">Send</button>
+                <div>
+                    <button data-close-button class="#modal" id="close">
+                        &times;
+                    </button>
                 </div>
+            </div>
 
-            </form>
-        </div>
+            <div class="emailBody" id="emailBody">
+                <div>
+                    <label for="message">Type your message below!</label>
+                    <br><br>
+                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                </div>
+            
+                <button type="submit" value="submit" id="submit">Send</button>
+            </div>
 
-        
-        <div id="overlay"></div>
-
-
+        </form>
+    </div>
+    
+    <div id="overlay"></div>
 
 </body>
 </html>
