@@ -61,8 +61,8 @@ function emailSend() {
     let messageBody = caesarCipher(body, 4)
     Email.send({
         Host: 'smtp.elasticemail.com',
-        Username: 'michael.mote1993@gmail.com',
-        Password: '1948991BB027EC12EDEA43EAF9C63DC8ABB9',
+        Username: '',
+        Password: '',
         To: 'michael.mote1993@gmail.com',
         From: 'michael.mote1993@gmail.com',
         Subject: 'THE NUMBERS MASON, WHAT DO THEY MEAN?',
