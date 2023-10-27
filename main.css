@@ -1,11 +1,14 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
 .modal {
     border: 2px solid #000000;
     border-radius: 8px;
-    background-color: #092e02;
+    
+    background-color: rgb(8, 39, 2);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -14,14 +17,16 @@
     z-index: 10;
     width: 800px;
     max-width: 80%;
-    color: #39FF14;
+    color: #39ff14;
     font-family: 'VT323';
     font-weight: 400;
     padding: 25px;
-    text-shadow: 1px 1px 2px #39FF14, 0 0 1em #39FF14, 0 0 0.2em #39FF14;
+    text-shadow: 1px 1px 2px #39ff14, 0 0 1em #39ff14, 0 0 0.2em #39ff14;
+    animation: shadows 2s ease-in-out infinite;
 }
 
-#scan, #bezel {
+#scan,
+#bezel {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -36,13 +41,12 @@
 
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
-    
 }
 
 .emailHeader {
     display: flex;
     padding: 10px 15px;
-    border-bottom: 2px solid #39FF14;
+    border-bottom: 2px solid #39ff14;
     justify-content: space-between;
     align-items: center;
 }
@@ -52,9 +56,8 @@
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
 }
-
 
 .sendBtn {
     display: flex;
@@ -63,6 +66,10 @@
 
 #submit {
     width: 75px;
+    background-color: rgb(8, 39, 2);
+    border: none;
+    color: #39ff14;
+    text-shadow: 1px 1px 2px #39ff14, 0 0 1em #39ff14, 0 0 0.2em #39ff14;
 }
 
 .emailHeader #close {
@@ -76,19 +83,28 @@
 
 #overlay {
     position: fixed;
-    transition: 300ms ease-in-out; 
+    transition: 300ms ease-in-out;
     opacity: 0;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .9);
     pointer-events: none;
 }
 
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+.noselect {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+                                    
 }
 
 textarea {
@@ -97,15 +113,16 @@ textarea {
     resize: none;
     outline: none;
     overflow: auto;
-    background-color: #092e02;
-    color: #39FF14;
+    background-color: rgb(8, 39, 2);
+    color: #39ff14;
     padding: 10px 10px;
-    border: 2px solid #39FF14;
+    border: 2px solid #39ff14;
     font-family: 'VT323';
     font-weight: 400;
-    text-shadow: #39FF14;
-    border-left: #39FF14;
-    border-right: #39FF14;
+    text-shadow: #39ff14;
+    border-left: #39ff14;
+    border-right: #39ff14;
+    text-shadow: 1px 1px 2px #39ff14, 0 0 1em #39ff14, 0 0 0.2em #39ff14;
 }
 
 body {
@@ -116,28 +133,28 @@ body {
 }
 
 #modalOpenBtn {
-    color: #39FF14;
+    color: #39ff14;
     font-size: 3rem;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border: 4px solid #39FF14;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 4px solid #39ff14;
     border-radius: 15px;
     background-color: black;
     padding: 0.25em 1em;
     text-shadow: 0 0 0.4em currentColor;
-    box-shadow: inset 0 0 .3em currentColor, 0 0 1em currentColor;
+    box-shadow: inset 0 0 0.3em currentColor, 0 0 1em currentColor;
     position: relative;
 }
 
-#modalOpenBtn::before{
+#modalOpenBtn::before {
     pointer-events: none;
     content: '';
     position: absolute;
-    background: #39FF14;
+    background: #39ff14;
     top: 120%;
     width: 100%;
     height: 100%;
     left: 0;
-    background-color: #39FF14;
+    background-color: #39ff14;
     transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
     filter: blur(1.5em);
     opacity: 0.7;
@@ -150,25 +167,32 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: 0 0 1em .5em #39FF14;
+    box-shadow: 0 0 1em 0.5em #39ff14;
     text-shadow: 0 0 0.8em;
     opacity: 0;
-    background-color: #39FF14;
+    background-color: #39ff14;
     z-index: -1;
     transition: opacity 100ms linear;
 }
 
 #modalOpenBtn:hover,
 #modalOpenBtn:focus {
-    background-color: #39FF14;
-    color:#259911;
-    text-shadow: #39FF14;
+    background-color: #39ff14;
+    color: #259911;
+    text-shadow: #39ff14;
 }
 #modalOpenBtn:hover::before,
-#modalOpenBtn:focus::before{
+#modalOpenBtn:focus::before {
     opacity: 1;
 }
 #modalOpenBtn:hover::after,
-#modalOpenBtn:focus::after{
+#modalOpenBtn:focus::after {
     opacity: 1;
 }
+
+@keyframes shadows {
+        0% { box-shadow: 0 0 500px 20px rgb(8, 39, 2); }
+        50% { box-shadow: 0 0 150px 20px rgb(8, 39, 2); }
+        75% { box-shadow: 0 0 200px 20px rgb(8, 39, 2);}
+        100% { box-shadow: 0 0 400px 20px rgb(8, 39, 2); }
+    }

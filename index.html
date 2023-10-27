@@ -16,11 +16,11 @@
     <button data-open-button="#modal" id="modalOpenBtn">shhh...</button>
     
     <div class="modal" id="modal">
-        <img src="./images/scanlines.png" id="scan">
-        <img src="./images/bezel.png" id="bezel">
+        <img src="./images/scanlines.png" id="scan" class="noselect">
+        <img src="./images/bezel.png" id="bezel" class="noselect">
 
         <form onsubmit="emailSend(); reset(); return false;" id="emailForm" method="post">
-            <div class="emailHeader" id="emailHeader">
+            <div class="emailHeader noselect" id="emailHeader">
                 <div>
                     You must be a Secret Squirrel... 
                 </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="emailBody" id="emailBody">
+            <div class="emailBody noselect" id="emailBody">
                 <div>
                     <label for="message">Type your Secret Message below.</label>
                     <br><br>
