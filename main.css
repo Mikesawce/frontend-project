@@ -69,7 +69,7 @@ body {
     min-height: 100vh;
     display: grid;
     place-items: center;
-    background-color: black;
+    background-color: #061a0d;
 }
 
 #modalOpenBtn {
