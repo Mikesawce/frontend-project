@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="main.css">
     <script src="main.js" defer></script>
     <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <button data-open-button="#modal" id="modalOpenBtn">shhh...</button>
     
     <div class="modal" id="modal">
+        <img src="./images/scanlines.png" id="scan">
+        <img src="./images/bezel.png" id="bezel">
 
         <form onsubmit="emailSend(); reset(); return false;" id="emailForm" method="post">
             <div class="emailHeader" id="emailHeader">
                 <div>
-                    You must be a Secret Squirrel
+                    You must be a Secret Squirrel... 
                 </div>
 
                 <div>
@@ -29,12 +34,13 @@
 
             <div class="emailBody" id="emailBody">
                 <div>
-                    <label for="message">Type your message below!</label>
+                    <label for="message">Type your Secret Message below.</label>
                     <br><br>
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                    <textarea name="message" id="message"></textarea>
                 </div>
-            
-                <button type="submit" value="submit" id="submit">Send</button>
+                <div class="sendBtn">
+                    <button type="submit" value="submit" id="submit">Send</button>
+                </div>
             </div>
 
         </form>

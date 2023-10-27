@@ -3,27 +3,46 @@
 }
 
 .modal {
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: white;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: #092e02;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    transition: 300ms ease-in-out;
     z-index: 10;
     width: 800px;
     max-width: 80%;
+    color: #39FF14;
+    font-family: 'VT323';
+    font-weight: 400;
+    padding: 25px;
+    text-shadow: 1px 1px 2px #39FF14, 0 0 1em #39FF14, 0 0 0.2em #39FF14;
+}
+
+#scan, #bezel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#scan {
+    opacity: 80%;
 }
 
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
+    
 }
 
 .emailHeader {
     display: flex;
     padding: 10px 15px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #39FF14;
     justify-content: space-between;
     align-items: center;
 }
@@ -31,6 +50,19 @@
 .emailBody {
     height: 300px;
     padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+.sendBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#submit {
+    width: 75px;
 }
 
 .emailHeader #close {
@@ -44,13 +76,13 @@
 
 #overlay {
     position: fixed;
-    transition: 200ms ease-in-out; 
+    transition: 300ms ease-in-out; 
     opacity: 0;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .4);
     pointer-events: none;
 }
 
@@ -63,6 +95,17 @@ textarea {
     width: 100%;
     height: 200px;
     resize: none;
+    outline: none;
+    overflow: auto;
+    background-color: #092e02;
+    color: #39FF14;
+    padding: 10px 10px;
+    border: 2px solid #39FF14;
+    font-family: 'VT323';
+    font-weight: 400;
+    text-shadow: #39FF14;
+    border-left: #39FF14;
+    border-right: #39FF14;
 }
 
 body {
